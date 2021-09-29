@@ -1,0 +1,15 @@
+[submodule "Ant"]
+	path = Ant
+	url = https://github.com/EliverLara/Ant.git
+[submodule "Layan-kde"]
+	path = Layan-kde
+	url = https://github.com/vinceliuice/Layan-kde.git
+[submodule "Tela-icon-theme"]
+	path = Tela-icon-theme
+	url = https://github.com/vinceliuice/Tela-icon-theme.git
+[submodule "logiops"]
+	path = logiops
+	url = https://github.com/PixlOne/logiops.git
+[submodule "ibus-bamboo"]
+	path = ibus-bamboo
+	url = https://github.com/BambooEngine/ibus-bamboo.git
