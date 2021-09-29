@@ -1,28 +1,23 @@
-all: update Ant Layan Tela logiops bamboo
+all: Ant Layan Tela Logiops bamboo
 
-update:
-	git pull
-	git submodule update --init --recursive
-	
 # Ant themes
 Ant:
-	cd ./Ant && ln -sf $(pwd) ~/.themes
+	cd ./Ant && git pull && ln -sf $(pwd) ~/.themes
 
 # Layan kvantum themes
 Layan:
-	cd ./Layan-kde && ./install.sh
+	cd ./Layan-kde && git pull && ./install.sh
 
 # Tela icons
 Tela:
-	cd ./Tela-icon-theme && ./install.sh
+	cd ./Tela-icon-theme && git pull && ./install.sh
 
 # logiops
 Logiops:
-	cd ./logiops && mkdir -p build && cd build && cmake .. && make && sudo make install
+	cd ./logiops && git pull && mkdir -p build && cd build && cmake .. && make && sudo make install
 
 # ibus bamboo
 bamboo:
-	cd ./ibus-bamboo && sudo make install
+	cd ./ibus-bamboo && git pull && sudo make install
 	ibus restart
 	env DCONF_PROFILE=ibus dconf write /desktop/ibus/general/preload-engines "['BambooUs', 'Bamboo']" && gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('ibus', 'Bamboo')]"
-
